@@ -1,6 +1,6 @@
 ---
 name: generative-sigils
-description: Create themed mechanical sigil images and videos with this GEAR BLOOM project's local renderer and procedural effects, including nine-video sets arranged as three groups of three.
+description: Create themed mechanical sigil images, videos and browser clock faces with this GEAR BLOOM project's local geometry, palettes and procedural effects, including nine-video sets arranged as three groups of three.
 ---
 
 # Generative Sigils
@@ -58,6 +58,12 @@ Supported IDs are `none`, `sparks`, `molten-splash`, `flame-corona`, `crystal-du
 Effects must be deterministic functions of normalized frame phase, configuration and preset identity. Derive export phase from the frame index and total frame count; use stable seeded variation and periodic motion/lifetimes so the loop joins cleanly. Do not use wall-clock time, unseeded `Math.random()`, accumulating particle state or live timers to decide exported frames. The same input phase must produce the same image, including when frames are rendered out of order.
 
 Preview several phases and the loop boundary before rerendering a collection. A still image cannot establish that particles move smoothly or that an effect loops. Keep effect code and outputs in this project; this workflow requires no new global configuration, external assets or broader permissions.
+
+## Browser clock faces
+
+For a clock-face request, start with `examples/clock.html`, `src/clock.js` and `src/clock.css`. Reuse `src/core.js` geometry and `src/palettes.js` themes. Keep conventional tick marks, hands or a digital readout so the time stays readable; mathematical curves and effects decorate the dial. Preserve responsive layout, keyboard-accessible controls and reduced-motion behavior. The clock is a browser example, not an installed native watch face.
+
+The browser clock may read local wall time in its wrapper. Keep its time mapping explicit and testable; exported animation frames must still derive from supplied time or normalized phase. Do not add a clock CLI flag unless it is actually implemented. Keep the same project scope and local-only dependencies described above.
 
 ## Review and handoff
 

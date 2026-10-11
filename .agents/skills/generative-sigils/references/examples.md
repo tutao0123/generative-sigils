@@ -93,3 +93,13 @@ Use `src/palettes.js` for color and `src/video-presets.js` for gear parameters, 
 Keep curves mathematically closed and `look.laps` an integer. Exported particles and electrical effects must remain functions of normalized frame phase and stable preset inputs. Review several phases and the loop join, then check actual MP4 duration, dimensions, frame rate and codecs before reporting an export as finished.
 
 The [browser clock](../../../../examples/clock.html) is a separate example using hours, minutes and seconds rings and four shared palettes. Run the project's browser server and open `/examples/clock.html`; it is not a video-render CLI option.
+
+```text
+$generative-sigils Customize the existing Orbit Clock with a glacial palette
+and a subtler central sigil. Keep the hours, minutes and seconds readable,
+reuse the shared gear geometry, and work only inside this project.
+```
+
+Use `src/clock.js` for the time mapping and Canvas face, and `src/clock.css`
+for the responsive layout. Browser wall time belongs in the clock wrapper;
+video export remains deterministic from explicit time or normalized phase.
