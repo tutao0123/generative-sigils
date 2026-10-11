@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#080b12" />
+    <meta name="description" content="A luminous clock face made with GEAR BLOOM's local gear geometry and color palettes." />
+    <title>Orbit Clock — GEAR BLOOM</title>
+    <link rel="stylesheet" href="../src/clock.css" />
+  </head>
+  <body>
+    <main class="clock-shell">
+      <header class="clock-header">
+        <a class="brand" href="../"><span class="brand-mark" aria-hidden="true">✳</span> GEAR BLOOM</a>
+        <span class="edition">EXPERIMENT 02 / TIME</span>
+      </header>
+      <section class="clock-heading" aria-labelledby="clock-title">
+        <div>
+          <p class="eyebrow"><span class="status-light" aria-hidden="true"></span> A MECHANICAL MOMENT</p>
+          <h1 id="clock-title">Orbit Clock</h1>
+          <p class="intro">Time, traced in light.</p>
+        </div>
+        <p class="location">YOUR LOCAL TIME<br /><span id="timezone">LOCAL</span></p>
+      </section>
+      <section class="clock-stage" aria-label="Luminous clock face">
+        <div class="stage-corner corner-tl" aria-hidden="true"></div>
+        <div class="stage-corner corner-tr" aria-hidden="true"></div>
+        <div class="stage-corner corner-bl" aria-hidden="true"></div>
+        <div class="stage-corner corner-br" aria-hidden="true"></div>
+        <canvas id="clock-face" width="720" height="720" aria-label="Analog clock with hour, minute and second light rings"></canvas>
+        <div class="readout">
+          <span class="readout-label" id="clock-mode">LIVE / LOCAL</span>
+          <time id="digital-time">00:00:00</time>
+          <span id="calendar-date">Loading local time</span>
+        </div>
+        <div class="track-key" aria-hidden="true"><span class="hour-key">HOURS</span><span class="minute-key">MINUTES</span><span class="second-key">SECONDS</span></div>
+      </section>
+      <footer class="clock-controls">
+        <fieldset class="palette-picker">
+          <legend>LIGHT PALETTE</legend>
+          <div class="palette-options">
+            <button type="button" class="palette-button" data-palette="spectrum" aria-pressed="true"><i style="--swatch:#ff66c4" aria-hidden="true"></i>Spectrum</button>
+            <button type="button" class="palette-button" data-palette="amber-relic" aria-pressed="false"><i style="--swatch:#ffc257" aria-hidden="true"></i>Amber</button>
+            <button type="button" class="palette-button" data-palette="glacial-sigil" aria-pressed="false"><i style="--swatch:#3bd9ff" aria-hidden="true"></i>Glacial</button>
+            <button type="button" class="palette-button" data-palette="void-ritual" aria-pressed="false"><i style="--swatch:#a83aff" aria-hidden="true"></i>Void</button>
+          </div>
+        </fieldset>
+        <button id="freeze-time" type="button" class="freeze-button" aria-pressed="false"><span aria-hidden="true">Ⅱ</span> Freeze moment</button>
+      </footer>
+      <p class="clock-note">Three orbits. One rolling gear. Every second finds a new point.</p>
+    </main>
+    <script type="module" src="../src/clock.js"></script>
+  </body>
+</html>
